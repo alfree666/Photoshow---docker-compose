@@ -1,0 +1,18 @@
+version: "3.3"
+
+services:
+
+  photoshow:
+    image: linuxserver/photoshow
+    container_name: photoshow
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Madrid
+    volumes:
+      - ./config:/config
+      - ./pictures>:/Pictures:ro
+      - ./thumbs>:/Thumbs
+    ports:
+      - 8200:80
+    restart: unless-stopped
