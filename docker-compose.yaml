@@ -11,8 +11,8 @@ services:
       - TZ=Europe/Madrid
     volumes:
       - ./config:/config
-      - ./pictures>:/Pictures:ro
-      - ./thumbs>:/Thumbs
+      - ./pictures:/Pictures:ro
+      - ./thumbs:/Thumbs
     ports:
       - 8200:80
     restart: unless-stopped
